@@ -1,41 +1,73 @@
 <style>
-body {background-color:	lightgray;}
-b   {color: black; font-size: 35px}
+  body {
+    background-color: lightgray;
+  }
+
+  b {
+    color: black;
+    font-size: 35px
+  }
 </style>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+  crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+  crossorigin="anonymous"></script>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <div><a class="nav-link" href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRyztNyi5Qi9TX6luuQUdmulm_leXvNzA3biaCeRiM4gEushFF2Q" style="border-radius: 50%; height="55"; width="55""><i><b>Bygone</b></i><span class="sr-only">(current)</span></a>
-      </div></li>     
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i>Shopping Cart<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-users"></i>   
-          User Management
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          {{# if login}}
-          <a class="dropdown-item" href="/user/profile">User Account</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="/user/logout">LogOut</a>
-          {{ else }}
-          <a class="dropdown-item" href="/user/signup">Sign Up</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="/user/signin">Sign In</a>
-          {{/if}}
-          
+        <div>
+          <a class="nav-link" href="/">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRyztNyi5Qi9TX6luuQUdmulm_leXvNzA3biaCeRiM4gEushFF2Q"
+              style="border-radius: 50%; height=" 55 "; width="55 "">
+            <i>
+              <b>Bygone</b>
+            </i>
+            <span class="sr-only">(current)</span>
+          </a>
         </div>
       </li>
     </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/shopping-cart/">
+            <i class="fas fa-shopping-cart"></i>
+            Shopping Cart
+            <span class="badge">{{session.cart.totalQty}}</span>
+          </a>
+        </li>
+        <li>
+          
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <i class="fas fa-users"></i>
+            User Management
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            {{# if login}}
+            <a class="dropdown-item" href="/user/profile">User Account</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/user/logout">LogOut</a>
+            {{ else }}
+            <a class="dropdown-item" href="/user/signup">Sign Up</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/user/signin">Sign In</a>
+            {{/if}}
+
+          </div>
+        </li>
+      </ul>
     </form>
   </div>
 </nav>

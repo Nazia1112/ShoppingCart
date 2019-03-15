@@ -1,30 +1,39 @@
-{{!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script> {{# if products}}
-<div class="container">
+    crossorigin="anonymous"></script>
+    
+<style>
+#content {
+    width: 400px;
+    margin: 0 auto;
+}
+</style>
+
+{{# if products}}
+<br>
+<div class="container" id="content">
     <div class="row">
-        <div class="col-sm-6 col-md-4 col-md-offset-3 col-sm-offset-3">
+        <div class="col-sm-12 col-md-12 col-md-offset-12 col-sm-offset-12">
             <ul class="list-group">
                 {{# each products}}
                 <li class="list-group-item">
+                    <span class="badge">{{ this.qty }}</span>
+                    <strong>{{ this.item.title }}</strong>
+                    <span class="badge badge-success">$ {{ this.price }}</span>
 
-                    <span class="badge">{{this.qty}}</span>
-                    <strong>{{this.item.title}}</strong>
-                    <span class="badge badge-success">{{this.price}}</span>
                     <div class="dropdown">
                         <button class="btn btn-danger dropdown-toggle" style="float: right;" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             Action
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Reduce by 1</a>
-                            <a class="dropdown-item" href="#">Remove All</a>
+                            <a class="dropdown-item" href="/reduce/{{this.item._id}}">Reduce by 1</a>
+                            <a class="dropdown-item" href="/remove/{{this.item._id}}">Remove All</a>
                         </div>
                     </div>
-
                 </li>
                 {{/each}}
             </ul>
@@ -32,154 +41,29 @@
         </div>
     </div>
 </div>
-
 <br>
-<div class="comodule.exports = function Cart(oldCart){
-//     this.items = oldCart.items || {};
-//     this.totalQty = oldCart.totalQty || 0;
-//     this.totalPrice = oldCart.totalPrice || 0;
-    
-//     this.add = function(item, id){
-//         var storedItem = this.items[id];
-//         if(!storedItem){
-//             storedItem = this.items[id] = {item : item, qty : 0, price : 0};
-//         }
-//         storedItem.qty++;
-//         storedItem.price = storedItem.item.price * storedItem.qty;
-//         this.totalQty++;
-//         this.totalPrice += storedItem.item.price;
-//     }
-
-//     this.generateArray = function(){
-//         var arr = [];
-//         for(var id in this.items){
-//             arr.push(this.items[id]);
-//         }
-//         return arr;
-//     }
-
-
-// };iner">
-    <div classmodule.exports = function Cart(oldCart){
-//     this.items = oldCart.items || {};
-//     this.totalQty = oldCart.totalQty || 0;
-//     this.totalPrice = oldCart.totalPrice || 0;
-    
-//     this.add = function(item, id){
-//         var storedItem = this.items[id];
-//         if(!storedItem){
-//             storedItem = this.items[id] = {item : item, qty : 0, price : 0};
-//         }
-//         storedItem.qty++;
-//         storedItem.price = storedItem.item.price * storedItem.qty;
-//         this.totalQty++;
-//         this.totalPrice += storedItem.item.price;
-//     }
-
-//     this.generateArray = function(){
-//         var arr = [];
-//         for(var id in this.items){
-//             arr.push(this.items[id]);
-//         }
-//         return arr;
-//     }
-
-
-// };ow">
-        <div cmodule.exports = function Cart(oldCart){
-//     this.items = oldCart.items || {};
-//     this.totalQty = oldCart.totalQty || 0;
-//     this.totalPrice = oldCart.totalPrice || 0;
-    
-//     this.add = function(item, id){
-//         var storedItem = this.items[id];
-//         if(!storedItem){
-//             storedItem = this.items[id] = {item : item, qty : 0, price : 0};
-//         }
-//         storedItem.qty++;
-//         storedItem.price = storedItem.item.price * storedItem.qty;
-//         this.totalQty++;
-//         this.totalPrice += storedItem.item.price;
-//     }
-
-//     this.generateArray = function(){
-//         var arr = [];
-//         for(var id in this.items){
-//             arr.push(this.items[id]);
-//         }
-//         return arr;
-//     }
-
-
-// };s="col-sm-6 col-md-4 col-md-offset-3 col-sm-offset-3">
-            <smodule.exports = function Cart(oldCart){
-//     this.items = oldCart.items || {};
-//     this.totalQty = oldCart.totalQty || 0;
-//     this.totalPrice = oldCart.totalPrice || 0;
-    
-//     this.add = function(item, id){
-//         var storedItem = this.items[id];
-//         if(!storedItem){
-//             storedItem = this.items[id] = {item : item, qty : 0, price : 0};
-//         }
-//         storedItem.qty++;
-//         storedItem.price = storedItem.item.price * storedItem.qty;
-//         this.totalQty++;
-//         this.totalPrice += storedItem.item.price;
-//     }
-
-//     this.generateArray = function(){
-//         var arr = [];
-//         for(var id in this.items){
-//             arr.push(this.items[id]);
-//         }
-//         return arr;
-//     }
-
-
-// };ng> Total: {{totalPrice}}</strong>
-        </div>module.exports = function Cart(oldCart){
-//     this.items = oldCart.items || {};
-//     this.totalQty = oldCart.totalQty || 0;
-//     this.totalPrice = oldCart.totalPrice || 0;
-    
-//     this.add = function(item, id){
-//         var storedItem = this.items[id];
-//         if(!storedItem){
-//             storedItem = this.items[id] = {item : item, qty : 0, price : 0};
-//         }
-//         storedItem.qty++;
-//         storedItem.price = storedItem.item.price * storedItem.qty;
-//         this.totalQty++;
-//         this.totalPrice += storedItem.item.price;
-//     }
-
-//     this.generateArray = function(){
-//         var arr = [];
-//         for(var id in this.items){
-//             arr.push(this.items[id]);
-//         }
-//         return arr;
-//     }
-
-
-// };
-    </div>
-</div>
-<hr>
-<div class="container">
+<div class="container" id="content">
     <div class="row">
-        <div class="col-sm-6 col-md-4 col-md-offset-3 col-sm-offset-3">
-            <button class="btn btn-success" type="button">Checkout</button>
+        <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+            <strong>Total:$ {{ totalPrice }}</strong>
         </div>
     </div>
 </div>
-<hr> {{else}}
+<hr>
+<div class="container" id="content">
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+            <a href="/checkout" class="btn btn-success" type="button">Checkout</a>
+        </div>
+    </div>
+</div>
+{{ else }}
+<hr>
 <div class="container">
     <div class="row">
-        <div class="col-sm-6 col-md-4 col-md-offset-3 col-sm-offset-3">
+        <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
             <h2>No items in Cart</h2>
         </div>
     </div>
 </div>
-{{/if}} --}}
+{{/if}}
